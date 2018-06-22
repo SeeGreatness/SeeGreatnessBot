@@ -1,0 +1,2 @@
+# SeeGreatnessBot
+discord bot
