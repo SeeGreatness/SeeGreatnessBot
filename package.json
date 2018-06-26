@@ -1,7 +1,7 @@
 {
   "name": "SeeGreatness Bot",
   "description": "I am a bot of SeeGreatness himself",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
