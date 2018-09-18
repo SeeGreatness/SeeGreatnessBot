@@ -47,14 +47,14 @@ const talkedRecently = new Set();
        }else{
            // the user can type the command ... your command code goes here :)
            message.reply("you claimed your Daily come back in one minute to claim again!");
-          message.channel.send(message.author + "you claimed your Daily come back in one minute to claim again!");
-
         // Adds the user to the set so that they can't talk for a minute
         talkedRecently.add(message.author.id);
         setTimeout(() => {
           // Removes the user from the set after a minute
           talkedRecently.delete(message.author.id);
-		message.author.send("you may collect your daily now!")
+	message.author.send(message.author + " you may collect your daily now!");
+	message.channel.send(message.author + " you may collect your daily now!"");
+
         }, 60000);
     }     
  }else       
