@@ -42,12 +42,12 @@ const talkedRecently = new Set();
    if(message.content.startsWith(prefix + "daily")||message.content === "+daily"){
 
        if (talkedRecently.has(message.author.id)) {
-         msg.channel.send(message.author + " Wait 1 minute to claim again!");
+         message.channel.send(message.author + " Wait 1 minute to claim again!");
     
        }else{
            // the user can type the command ... your command code goes here :)
            message.reply("you claimed your Daily come back in one minute to claim again!");
-          msg.channel.send(message.author + "you claimed your Daily come back in one minute to claim again!");
+          message.channel.send(message.author + "you claimed your Daily come back in one minute to claim again!");
 
         // Adds the user to the set so that they can't talk for a minute
         talkedRecently.add(message.author.id);
