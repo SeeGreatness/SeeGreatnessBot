@@ -54,6 +54,7 @@ const talkedRecently = new Set();
         setTimeout(() => {
           // Removes the user from the set after a minute
           talkedRecently.delete(message.author.id);
+		message.author.send("you may collect your daily now!")
         }, 60000);
     }     
  }else       
