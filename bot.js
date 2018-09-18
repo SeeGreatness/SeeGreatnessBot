@@ -56,8 +56,7 @@ const talkedRecently = new Set();
           talkedRecently.delete(msg.author.id);
         }, 60000);
     }     
- }
-       
+ }else       
   if(message.content===null){
     message.channel.send("Unknown Command");
   }
