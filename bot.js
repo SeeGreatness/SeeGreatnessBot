@@ -53,7 +53,7 @@ const talkedRecently = new Set();
           // Removes the user from the set after a minute
           talkedRecently.delete(message.author.id);
 	message.author.send(message.author + " you may collect your daily now!");
-	message.channel.send(message.author + " you may collect your daily now!"");
+
 
         }, 60000);
     }     
