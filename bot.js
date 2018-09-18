@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const token = process.env.BOT_TOKEN;
+const prefix = "!"; // Set the prefix
 
 client.on("ready", () => {	
     console.log(`${client.user.tag} Is Active!`);
