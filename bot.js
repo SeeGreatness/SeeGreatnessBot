@@ -1,8 +1,8 @@
 const config = require('./config.Json');
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = config.token,
-const prefix = config.prefix; // Set the prefix
+const token = config.token;
+const prefix = config.prefix;// Set the prefix
 client.on("ready", () => {	
     console.log(`${client.user.tag} Is Active!`);
     client.user.setPresence({game: {name: `with you!`, type: 1}});
