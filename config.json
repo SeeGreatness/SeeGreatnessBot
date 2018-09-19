@@ -1,14 +1,14 @@
 {
-  "token":"fuq i dont remember that shit",
+  "token":"process.env.BOT_TOKEN",
   "prefix":"!",
   "DailyIntetrval":60000,
   "BotOwnerName":"SeeGreatness",
   "BotOwnerDiscriminator":"0420",
   "BotOwner":"SeeGreatness#0420",
-  "BotOwnerID":"how Da fuq would i remember that",
+  "BotOwnerID":"360894787785719809",
   "BotID":"ClienID",
-  "ClienID":"how Da fuq would i remember that",
-  "BotDiscriminator":"I dont fucking remember dat shit",
-  "BotName":"SeeGreatnessJava#IDONTREMEMBER",
-  "Bot":"What the fuq was i thinking adding this... OH i dont remember lmao"
+  "ClienID":"438418186677911553",
+  "BotDiscriminator":"1545",
+  "BotName":"SeeGreatnessJava#1545"
+  
 }
