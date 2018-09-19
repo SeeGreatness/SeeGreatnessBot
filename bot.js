@@ -18,7 +18,8 @@ const responseObject = {
   "wat": "Say what?",
   "lol": "roflmaotntpmp",
   "!Invite":"http://www.tinyurl.com/PokemonGoAITrainer",
-  "!invite":"http://www.tinyurl.com/PokemonGoAITrainer"
+  "!invite":"http://www.tinyurl.com/PokemonGoAITrainer",
+  "+cash":"Stop it your not rich!"
 };
 const talkedRecently = new Set();
 
@@ -42,11 +43,11 @@ const talkedRecently = new Set();
    if(message.content.startsWith(prefix + "daily")||message.content === "+daily"){
 
        if (talkedRecently.has(message.author.id)) {
-         message.channel.send(message.author + " Wait 1 minute to claim again!");
+         message.channel.send(message.author + " Wait the cool down to claim again!");
     
        }else{
            // the user can type the command ... your command code goes here :)
-           message.reply("you claimed your Daily come back in one minute to claim again!");
+           message.reply("you claimed your Daily come back after the cooldown to claim again! I will send you a message when you can collect!");
         // Adds the user to the set so that they can't talk for a minute
         talkedRecently.add(message.author.id);
         setTimeout(() => {
@@ -55,7 +56,7 @@ const talkedRecently = new Set();
 	message.author.send(message.author + " you may collect your daily now!");
 
 
-        }, 60000);
+        }, 72000000);
     }     
  }else       
   if(message.content===null){
