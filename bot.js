@@ -4,10 +4,12 @@ const token = process.env.BOT_TOKEN;
 const prefix = "!"; // Set the prefix
 
 client.on("ready", () => {	
+client.user.setStatus("dnd");
     console.log(`${client.user.tag} Is Active!`);
+client.user.setStatus("idle");
     client.user.setPresence({game: {name: `with you!`, type: 1}});
     console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-    client.user.setStatus("idle");
+   client.user.setStatus("online");
 
 });
 
