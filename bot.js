@@ -1,6 +1,5 @@
 //main
 const Discord = require('discord.js');
-var config = JSON.parse(fs.readFileSync('./settings.json', 'utf-8'));
 
 //sets
 const talkedRecently = new Set();
@@ -22,6 +21,7 @@ const token = config.token;
 
 var guilds = {};
 
+var config = JSON.parse(fs.readFileSync('./settings.json', 'utf-8'));
 
 client.on("ready", () => {
 client.user.setStatus("dnd");
