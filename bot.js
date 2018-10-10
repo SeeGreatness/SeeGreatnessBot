@@ -11,7 +11,11 @@ const fs = require("fs");
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 //local require
-const responseObject = require('./responseObject.json');
+const responseObject = require(“./responseObject.json”);
+
+var config = JSON.parse(fs.readFileSync('./settings.json', 'utf-8'));
+
+
 
 //config
 const yt_api_key = config.yt_api_key;
@@ -21,7 +25,6 @@ const token = config.token;
 
 var guilds = {};
 
-var config = JSON.parse(fs.readFileSync('./settings.json', 'utf-8'));
 
 client.on("ready", () => {
 client.user.setStatus("dnd");
