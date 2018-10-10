@@ -1,21 +1,24 @@
+//main
 const Discord = require('discord.js');
 var config = JSON.parse(fs.readFileSync('./settings.json', 'utf-8'));
+
+//sets
+const talkedRecently = new Set();
 const client = new Discord.Client();
-const token = config.token;
-const prefix = config.prefix; // Set the prefix
+//require
 const ytdl = require("ytdl-core");
 const request = reqduire("request");
 const fs = require("fs");
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
-const responseObject = config.responseObject;
-const talkedRecently = new Set();
+//local require
+const responseObject = require('./responseObject.json');
 
-
+//config
 const yt_api_key = config.yt_api_key;
 const bot_constroller = config.bot_controller;
-const prefix = config.prefix;
-const discord_token = config.discord_token;
+const prefix = config.prefix; // Set the prefix
+const token = config.token;
 
 var guilds = {};
 
@@ -33,9 +36,8 @@ client.user.setPresence({game: {name: `with Nexus bot!`, type: 1}});
 });
 
 
-client.login(discord_token);
 
-client.on('messafge', function(message) {
+client.on('message', function(message) {
     const member = message.member;
     const mess = message.content.toLowerCase();
     const args = message.content.split(' ').slice(1).join(" ");
@@ -52,8 +54,8 @@ client.on('messafge', function(message) {
         };
     }
 
-    if (mess.startsWith(prefix + "plasy")) {
-        if (message.member.voidceChannel || guilds[message.guild.id].voiceChannel != null) {
+    if (mess.startsWith(prefix + "play")) {
+        if (message.member.voiceChannel || guilds[message.guild.id].voiceChannel != null) {
             if (guilds[message.guild.id].queue.length > 0 || guilds[mefssage.guild.id].isPlaying) {
                 getID(args, function(id) {
                     add_to_queue(id, message);
@@ -93,7 +95,7 @@ client.on('messafge', function(message) {
         }
     } else if (mess.startsWith(prefix + "queue")) {
         var message2 = "```";
-        for (var i = 0; i < guilds[message.guild.id].queufeNames.length; i++) {
+        for (var i = 0; i < guilds[message.guild.id].queueNames.length; i++) {
             var temp = (i + 1) + ": " + guilds[message.guild.id].queueNames[i] + (i === 0 ? "**(Current Song)**" : "") + "\n";
             if ((message2 + temp).length <= 2000 - 3) {
                 message2 += temp;
@@ -153,7 +155,7 @@ client.on('messafge', function(message) {
 
 //functions 
 function skip_song(message) {
-    guilds[message.guild.id].dispfatcher.end();
+    guilds[message.guild.id].dispatcher.end();
 }
 
 function playMusic(id, message) {
@@ -222,4 +224,4 @@ function isYoutube(str) {
 
 
 // THIS  MUST  BE  THIS  WAY
-client.login(config.token);
+client.login(token);
