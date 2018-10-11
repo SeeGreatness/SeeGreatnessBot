@@ -12,7 +12,7 @@ const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 //local require
 
-const responseObject={“lol “:“lmaooooooo”};
+
 var config = JSON.parse(fs.readFileSync('./settings.json', 'utf-8'));
 
 
