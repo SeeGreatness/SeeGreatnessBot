@@ -11,7 +11,8 @@ const fs = require("fs");
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 //local require
-const responseObject = {“lol”:”lmaooooooo”};
+
+const responseObject={“lol “:“lmaooooooo”};
 var config = JSON.parse(fs.readFileSync('./settings.json', 'utf-8'));
 
 
@@ -127,9 +128,6 @@ client.on('message', function(message) {
 	if (message.content.startsWith(prefix + "profile")||message.content === "+profile") {
     // Send the user's avatar URL
     message.reply(message.author.avatarURL);
-  }else
-  if(responseObject[message.content]) {
-    message.channel.send(responseObject[message.content]);
   }else
    if(message.content.startsWith(prefix + "daily")||message.content === "+daily"){
 
