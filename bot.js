@@ -13,7 +13,7 @@ const fetchVideoInfo = require("youtube-info");
 //local require
 
 
-var config = JSON.parse(fs.readFileSync('./settings.json', 'utf-8'));
+var config = JSON.parse(fs.readFileSync('settings.json', 'utf-8'));
 
 
 
